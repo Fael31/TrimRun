@@ -13,6 +13,10 @@
 		9C12FD5C2A170C01003C7EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C12FD5B2A170C01003C7EA9 /* Assets.xcassets */; };
 		9C12FD5F2A170C01003C7EA9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C12FD5E2A170C01003C7EA9 /* Preview Assets.xcassets */; };
 		9C12FD6A2A1718AF003C7EA9 /* HeartRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C12FD692A1718AF003C7EA9 /* HeartRateView.swift */; };
+		9C315CAC2A1AF90900BAA8D5 /* TimeLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C315CAB2A1AF90900BAA8D5 /* TimeLeftView.swift */; };
+		9C315CAE2A1AFA3B00BAA8D5 /* IndicatorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C315CAD2A1AFA3B00BAA8D5 /* IndicatorCardView.swift */; };
+		9C315CB22A1B17E400BAA8D5 /* IndicatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C315CB12A1B17E400BAA8D5 /* IndicatorType.swift */; };
+		9C315CB42A1B1B3400BAA8D5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C315CB32A1B1B3400BAA8D5 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		9C12FD5B2A170C01003C7EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C12FD5E2A170C01003C7EA9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9C12FD692A1718AF003C7EA9 /* HeartRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateView.swift; sourceTree = "<group>"; };
+		9C315CAB2A1AF90900BAA8D5 /* TimeLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLeftView.swift; sourceTree = "<group>"; };
+		9C315CAD2A1AFA3B00BAA8D5 /* IndicatorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorCardView.swift; sourceTree = "<group>"; };
+		9C315CB12A1B17E400BAA8D5 /* IndicatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorType.swift; sourceTree = "<group>"; };
+		9C315CB32A1B1B3400BAA8D5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +88,12 @@
 		9C12FD562A170C00003C7EA9 /* TrimRun Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				9C315CB02A1B123700BAA8D5 /* ViewModel */,
+				9C315CAF2A1B122600BAA8D5 /* View */,
 				9C12FD572A170C00003C7EA9 /* TrimRunApp.swift */,
 				9C12FD592A170C00003C7EA9 /* ContentView.swift */,
 				9C12FD5B2A170C01003C7EA9 /* Assets.xcassets */,
 				9C12FD5D2A170C01003C7EA9 /* Preview Content */,
-				9C12FD692A1718AF003C7EA9 /* HeartRateView.swift */,
 			);
 			path = "TrimRun Watch App";
 			sourceTree = "<group>";
@@ -95,6 +104,25 @@
 				9C12FD5E2A170C01003C7EA9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9C315CAF2A1B122600BAA8D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C12FD692A1718AF003C7EA9 /* HeartRateView.swift */,
+				9C315CAD2A1AFA3B00BAA8D5 /* IndicatorCardView.swift */,
+				9C315CAB2A1AF90900BAA8D5 /* TimeLeftView.swift */,
+				9C315CB32A1B1B3400BAA8D5 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9C315CB02A1B123700BAA8D5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9C315CB12A1B17E400BAA8D5 /* IndicatorType.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,8 +223,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C315CAE2A1AFA3B00BAA8D5 /* IndicatorCardView.swift in Sources */,
+				9C315CB42A1B1B3400BAA8D5 /* MainView.swift in Sources */,
 				9C12FD5A2A170C00003C7EA9 /* ContentView.swift in Sources */,
 				9C12FD582A170C00003C7EA9 /* TrimRunApp.swift in Sources */,
+				9C315CB22A1B17E400BAA8D5 /* IndicatorType.swift in Sources */,
+				9C315CAC2A1AF90900BAA8D5 /* TimeLeftView.swift in Sources */,
 				9C12FD6A2A1718AF003C7EA9 /* HeartRateView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
