@@ -6,23 +6,26 @@
 //
 
 import SwiftUI
+import WatchKit
 
 struct MainView: View {
-    @State var heartRate: Int = 150
-    @State var timeRemaining: Int = 5
+    @ObservedObject var heartRateMonitor: HeartRateMonitor = HeartRateMonitor()
+    @State var timeRemaining: Int
     
     var body: some View {
-        VStack {
-            HeartRateView(heartRate: heartRate, indicatorType: getIndicatorType(heartRate: heartRate))
-            TimeLeftView(timeRemaining: $timeRemaining)
-            IndicatorCardView(indicatorType: getIndicatorType(heartRate: heartRate))
+        NavigationView {
+            VStack {
+                HeartRateView(heartRate: heartRateMonitor.value, indicatorType: getIndicatorType(heartRate: heartRateMonitor.value))
+                TimeLeftView(timeRemaining: timeRemaining)
+                IndicatorCardView(indicatorType: getIndicatorType(heartRate: heartRateMonitor.value))
+            }
+            .padding(.top, 20)
         }
-        .padding(.top, 20)
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(heartRateMonitor: HeartRateMonitor(), timeRemaining: 10)
     }
 }
