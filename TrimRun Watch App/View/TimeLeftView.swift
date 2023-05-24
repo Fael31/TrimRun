@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TimeLeftView: View {
     @State var timeRemaining: Int
+    @Binding var isShowingMainView: Bool
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -28,6 +30,8 @@ struct TimeLeftView: View {
             .onReceive(timer) { _ in
                             if timeRemaining > 0 {
                                 timeRemaining -= 1
+                            } else {
+                                isShowingMainView = false
                             }
                         }
     }
@@ -39,8 +43,8 @@ struct TimeLeftView: View {
     }
 }
 
-struct TimeLeftView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimeLeftView(timeRemaining: 300)
-    }
-}
+//struct TimeLeftView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TimeLeftView(timeRemaining: 300)
+//    }
+//}

@@ -19,6 +19,7 @@
 		9C315CB42A1B1B3400BAA8D5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C315CB32A1B1B3400BAA8D5 /* MainView.swift */; };
 		9C315CB82A1B37F900BAA8D5 /* SetTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C315CB72A1B37F900BAA8D5 /* SetTimeView.swift */; };
 		9CA336C62A1C59190018764C /* HeartRateMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA336C52A1C59190018764C /* HeartRateMonitor.swift */; };
+		9CA336C82A1C83C00018764C /* HapticFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA336C72A1C83C00018764C /* HapticFeedback.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		9C315CB72A1B37F900BAA8D5 /* SetTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimeView.swift; sourceTree = "<group>"; };
 		9CA336C42A1C52F60018764C /* TrimRun Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TrimRun Watch App.entitlements"; sourceTree = "<group>"; };
 		9CA336C52A1C59190018764C /* HeartRateMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateMonitor.swift; sourceTree = "<group>"; };
+		9CA336C72A1C83C00018764C /* HapticFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedback.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				9C315CB12A1B17E400BAA8D5 /* IndicatorType.swift */,
 				9CA336C52A1C59190018764C /* HeartRateMonitor.swift */,
+				9CA336C72A1C83C00018764C /* HapticFeedback.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				9C12FD582A170C00003C7EA9 /* TrimRunApp.swift in Sources */,
 				9CA336C62A1C59190018764C /* HeartRateMonitor.swift in Sources */,
 				9C315CB22A1B17E400BAA8D5 /* IndicatorType.swift in Sources */,
+				9CA336C82A1C83C00018764C /* HapticFeedback.swift in Sources */,
 				9C315CAC2A1AF90900BAA8D5 /* TimeLeftView.swift in Sources */,
 				9C12FD6A2A1718AF003C7EA9 /* HeartRateView.swift in Sources */,
 			);

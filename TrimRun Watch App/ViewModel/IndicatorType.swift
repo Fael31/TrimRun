@@ -39,10 +39,16 @@ func getIndicatorColor(indicator: IndicatorType) -> Color {
     }
 }
 
-func getIndicatorType(heartRate: Int) -> IndicatorType {
-    if (heartRate < 90) {
+func getIndicatorType(heartRate: Int, age: Int = 21) -> IndicatorType {
+    /*
+     formula of ideal heart rate while running = 60% - 70% of Maximum Heart Rate (MHR)
+     formula of MHR = 220 - age
+    */
+    let minimum = Int(0.6 * Double(220 - age))
+    let maximum = Int(0.7 * Double(220 - age))
+    if (heartRate < minimum) {
         return .low
-    } else if (heartRate < 120) {
+    } else if (heartRate < maximum) {
         return .good
     } else {
         return .high

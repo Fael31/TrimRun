@@ -11,6 +11,7 @@ import HealthKit
 class HeartRateMonitor: ObservableObject {
     private var healthStore = HKHealthStore()
     let heartRateQuantity = HKUnit(from: "count/min")
+    @Published var hapticFeedback: HapticFeedback!
     
     @Published var value: Int = 0
     
@@ -21,6 +22,7 @@ class HeartRateMonitor: ObservableObject {
     func start() {
         autorizeHealthKit()
         startHeartRateQuery(quantityTypeIdentifier: .heartRate)
+        hapticFeedback = HapticFeedback(heartRateMonitor: self)
     }
     
     func autorizeHealthKit() {
@@ -67,5 +69,9 @@ class HeartRateMonitor: ObservableObject {
             
             self.value = Int(lastHeartRate)
         }
+    }
+    
+    deinit {
+        hapticFeedback.stopTimer()
     }
 }
