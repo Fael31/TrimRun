@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @ObservedObject var heartRateMonitor = HeartRateMonitor()
+    @ObservedObject var heartRateMonitor: HeartRateMonitor
     @State var timeRemaining: Int
     @Binding var isShowingMainView: Bool
     
@@ -16,7 +16,7 @@ struct MainView: View {
         NavigationStack {
             VStack {
                 HeartRateView(heartRate: heartRateMonitor.value, indicatorType: getIndicatorType(heartRate: heartRateMonitor.value))
-                TimeLeftView(timeRemaining: timeRemaining, isShowingMainView: $isShowingMainView)
+                TimeLeftView(timeRemaining: timeRemaining, isShowingMainView: $isShowingMainView, heartRateMonitor: heartRateMonitor)
                 IndicatorCardView(indicatorType: getIndicatorType(heartRate: heartRateMonitor.value))
             }
             .padding(.top, 20)

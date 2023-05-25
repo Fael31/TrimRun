@@ -10,13 +10,11 @@ import WatchKit
 
 class HapticFeedback: ObservableObject {
     @Published var heartRateMonitor: HeartRateMonitor
-    private var currentTime: Int = 0
     private var currentIndicatorType: IndicatorType = .good
     private var timer: Timer?
     
     init(heartRateMonitor: HeartRateMonitor) {
         self.heartRateMonitor = heartRateMonitor
-        start()
     }
     
     func start() {
@@ -29,6 +27,11 @@ class HapticFeedback: ObservableObject {
                 stopTimer()
             }
         }
+    }
+    
+    func stop() {
+        currentIndicatorType = .good
+        stopTimer()
     }
     
     func startTimer() {

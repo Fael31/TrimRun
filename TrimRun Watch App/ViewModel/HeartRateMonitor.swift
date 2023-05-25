@@ -16,13 +16,17 @@ class HeartRateMonitor: ObservableObject {
     @Published var value: Int = 0
     
     init() {
-        start()
+        autorizeHealthKit()
+        self.startHeartRateQuery(quantityTypeIdentifier: .heartRate)
+        hapticFeedback = HapticFeedback(heartRateMonitor: self)
     }
     
     func start() {
-        autorizeHealthKit()
-        startHeartRateQuery(quantityTypeIdentifier: .heartRate)
-        hapticFeedback = HapticFeedback(heartRateMonitor: self)
+        hapticFeedback.start()
+    }
+    
+    func stop() {
+        hapticFeedback.stop()
     }
     
     func autorizeHealthKit() {
@@ -69,9 +73,5 @@ class HeartRateMonitor: ObservableObject {
             
             self.value = Int(lastHeartRate)
         }
-    }
-    
-    deinit {
-        hapticFeedback.stopTimer()
     }
 }

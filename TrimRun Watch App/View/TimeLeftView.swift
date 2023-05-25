@@ -10,6 +10,7 @@ import SwiftUI
 struct TimeLeftView: View {
     @State var timeRemaining: Int
     @Binding var isShowingMainView: Bool
+    @ObservedObject var heartRateMonitor: HeartRateMonitor
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -31,6 +32,7 @@ struct TimeLeftView: View {
                             if timeRemaining > 0 {
                                 timeRemaining -= 1
                             } else {
+                                heartRateMonitor.stop()
                                 isShowingMainView = false
                             }
                         }
